@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling Iya atau Tidak</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Apakah Anda setuju?</h1>
+    <button id="yesButton">Iya</button>
+    <button id="noButton">Tidak</button>
+    <h2>Hasil Pemilihan:</h2>
+    <p id="result"></p>
+
+    <script>
+        let yesCount = 0;
+        let noCount = 0;
+
+        // Load data dari localStorage
+        if (localStorage.getItem('yesCount')) {
+            yesCount = parseInt(localStorage.getItem('yesCount'));
+        }
+        if (localStorage.getItem('noCount')) {
+            noCount = parseInt(localStorage.getItem('noCount'));
+        }
+        updateResult();
+
+        document.getElementById('yesButton').onclick = function() {
+            yesCount++;
+            localStorage.setItem('yesCount', yesCount);
+            updateResult();
+        };
+
+        document.getElementById('noButton').onclick = function() {
+            noCount++;
+            localStorage.setItem('noCount', noCount);
+            updateResult();
+        };
+
+        function updateResult() {
+            document.getElementById('result').innerText = `Iya: ${yesCount}, Tidak: ${noCount}`;
+        }
+    </script>
+</body>
+</html>
