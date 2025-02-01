@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.pilihan {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#hasil {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.happy {
+  color: green;
+}
+
+.sad {
+  color: red;
+}
